@@ -1,0 +1,40 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "import"],
+  "rules": {
+    "react/react-in-jsx-scope": "off", // Off for React 17+
+    "prettier/prettier": "error",
+    "no-unused-vars": "warn",           // Warn on unused variables
+    "eqeqeq": "warn",                   // Encourage === over ==
+    "semi": ["error", "always"],        // Enforce semicolons
+    "quotes": ["error", "single"],      // Prefer single quotes
+    "comma-dangle": ["error", "always-multiline"], // Trailing commas
+    "import/no-unresolved": "error",    // Ensure imports point to a file/module that can be resolved
+    "import/named": "error",            // Ensure named imports correspond to a named export in the remote file
+    "import/default": "error",           // Ensure a default export is present, given a default import
+    "import/namespace": "error",         // Ensure imported namespaces contain dereferenced properties as they are dereferenced
+    "react/prop-types": "off"           // Disable prop-types as we often use TypeScript
+  },
+  "settings": {
+    "react": {
+      "version": "detect"  // Automatically detect the React version
+    }
+  }
+}
